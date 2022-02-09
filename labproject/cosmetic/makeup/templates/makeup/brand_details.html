@@ -1,0 +1,71 @@
+{% extends 'makeup/base/base.html' %}
+{% load static %}
+{% block title %}Brand informations{% endblock %}
+
+{% block subpageclass %}class="sub_page"{% endblock subpageclass %}
+
+{% comment %} {% block page-heading %}Brand Information{% endblock page-heading %} {% endcomment %}
+
+{% block body %}
+
+{% if found %}
+<section class="client_section layout_padding-bottom">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Brand Details
+      </h2>
+    </div>
+    <div class="col-md-9 col-lg-7 mx-auto px-0">
+      <div class="box">
+        <div class="b-1">
+          <div class="client_id">
+            <div class="img-box">
+              <img src="{{ brand.image.url }}" alt="">
+            </div>
+            <div class="name">
+              <h5>
+                {{ brand.Name }}
+              </h5>
+              <div class="price_box">
+                <h6 class="price_heading">
+                  
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="client_detail">
+          <p>
+            <span style="font-size:20px;margin-right: 5px;color: #73a9a8;">Orgin: </span>
+              <p style="padding: 10px;margin: -10px 20px;">{{ brand.Orgin }}</p><br>
+
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="btn-box">
+      <a href="/makeup/Brands">
+        Go Back
+      </a>
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="client_section layout_padding-bottom">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Brands Details
+      </h2>
+    </div>
+    <div class="col-md-9 col-lg-7 mx-auto px-0 text-center">
+      <h2 style="color: rgb(247, 105, 105);">No item not found !!!</h2>
+    </div>
+    
+  </div>
+</section>
+{% endif %}
+  
+{% endblock body %}
+

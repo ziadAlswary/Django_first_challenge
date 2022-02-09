@@ -1,0 +1,76 @@
+{% extends 'makeup/base/base.html' %}
+{% load static %}
+{% block title %}product informations{% endblock %}
+
+{% block subpageclass %}class="sub_page"{% endblock subpageclass %}
+
+{% comment %} {% block page-heading %}Product Information{% endblock page-heading %} {% endcomment %}
+
+{% block body %}
+
+{% if found %}
+<section class="client_section layout_padding-bottom">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Product Details
+      </h2>
+    </div>
+    <div class="col-md-9 col-lg-7 mx-auto px-0">
+      <div class="box">
+        <div class="b-1">
+          <div class="client_id">
+            <div class="img-box">
+              {% static "" as baseUrl %}
+              {% comment %} <img src="{{ baseUrl }}makeup/images/{{  }}" alt=""> {% endcomment %}
+              <img src="{{ pro.image.url }}" alt="">
+            </div>
+            <div class="name">
+              <h5>
+                {{ pro.name }}
+              </h5>
+              <div class="price_box">
+                <h6 class="price_heading">
+                  <span>$</span>{{ pro.price }}
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="client_detail">
+          <p>
+            <span style="font-size:20px;margin-right: 5px;color: #73a9a8;">Catigory: </span>{{ pro.kind }} <br>
+            <span style="font-size:20px;margin-right: 5px;color: #73a9a8;">Expir date: </span>{{ pro.expir_date }} <br>
+            <span style="font-size:20px;margin-right: 5px;color: #73a9a8;">Descreotion: </span>
+              <p style="padding: 10px;margin: -10px 20px;">{{ pro.descreotion }}</p><br>
+
+            
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="btn-box">
+      <a href="/makeup/Products">
+        Go Back
+      </a>
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="client_section layout_padding-bottom">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Product Details
+      </h2>
+    </div>
+    <div class="col-md-9 col-lg-7 mx-auto px-0 text-center">
+      <h2 style="color: rgb(247, 105, 105);">No item not found !!!</h2>
+    </div>
+    
+  </div>
+</section>
+{% endif %}
+  
+{% endblock body %}
+

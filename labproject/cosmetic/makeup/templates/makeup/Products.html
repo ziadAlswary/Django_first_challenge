@@ -1,0 +1,32 @@
+{% extends 'makeup/base/base.html' %}
+{% load static %}
+
+{% block subpageclass %}class="sub_page"{% endblock subpageclass %}
+
+
+{% block body %}
+  <!-- veg section -->
+
+  <section class="veg_section ">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our Products
+        </h2>
+        <p>
+          which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't an
+        </p>
+      </div>
+      <div class="row">
+        {% for item in products %}
+          {% include 'makeup/includes/pruduct_item.html' %}
+        {% endfor %}
+   
+
+      </div>
+    </div>
+  </section>
+
+  <!-- end veg section -->
+
+  {% endblock body %}
